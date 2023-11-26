@@ -17,7 +17,7 @@ app.post('/generate-text', async (req, res) => {
     try {
         const response = await axios.post('https://api.openai.com/v1/chat/completions', {
             model: "gpt-3.5-turbo", // or "gpt-3.5-turbo" for ChatGPT
-            prompt: prompt,
+            messages: [{role: "user", content: prompt}],
             max_tokens: 100,
             temperature: 0.7
         }, {
