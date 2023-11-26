@@ -1,0 +1,25 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+#container {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+textarea, input, #output {
+    width: 100%;
+    margin: 10px 0;
+}
+
+textarea {
+    height: 100px;
+}
+
+#output {
+    border: 1px solid #ddd;
+    padding: 10px;
+    min-height: 50px;
+}
