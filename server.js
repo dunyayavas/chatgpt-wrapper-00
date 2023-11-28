@@ -10,16 +10,24 @@ app.use(express.static('public'));
 
 app.post('/generate-text', async (req, res) => {
     const { exampleText, topic } = req.body;
-    const prompt = `Learn the writing style: \n\n${exampleText}\n\nWrite something about ${topic} in this style:`;
+      // Constructing the prompt as a conversation
+      const messages = [
+        {
+            role: "system",
+            content: "You are a helpful assistant."
+        },
+        {
+            role: "user",
+            content: `Learn the writing style: ${exampleText} Write something about ${topic} in this style.`
+        }
+    ];
     console.log(exampleText);
     console.log(topic);
 
     try {
-        const response = await axios.post('https://api.openai.com/v1/completions', {
-            model: "text-davinci-003", // or "gpt-3.5-turbo" for ChatGPT
-            prompt: prompt,
-            max_tokens: 100,
-            temperature: 0.7
+        const response = await axios.post('https://api.openai.com/v1/chat/completions', {
+            model: "gpt-3.5-turbo",
+            messages: messages
         }, {
             headers: {
                 'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`,
@@ -27,8 +35,9 @@ app.post('/generate-text', async (req, res) => {
             }
         });
 
-        res.json({ generatedText: response.data.choices[0].text.trim() });
-    } catch (error) {
+        res.json({ generatedText: response.data.choices[0].message.content });
+    }
+        catch (error) {
         console.error(error);
         res.status(500).send('Error generating text');
     }
