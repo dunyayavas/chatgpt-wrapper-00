@@ -15,7 +15,7 @@ app.post('/generate-text', async (req, res) => {
     console.log(topic);
 
     try {
-        const response = await axios.post('https://api.openai.com/v1/chat/completions', {
+        const response = await axios.post('https://api.openai.com/v1/completions', {
             model: "text-davinci-003", // or "gpt-3.5-turbo" for ChatGPT
             prompt: prompt,
             max_tokens: 100,
