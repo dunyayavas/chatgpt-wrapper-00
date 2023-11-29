@@ -19,7 +19,7 @@ app.post('/generate-text', async (req, res) => {
         },
         {
             role: 'user',
-            content: 'Business Idea: ${exampleText}\n\nCreate a brand name for this idea.'
+            content: ' Come up with 10 brand name alternatives which are memorizable, easy to say, sound good, distinctive for this business Idea: ${exampleText}\n\n Your alternatives should fit one of these categories: Definitive Brand Names (like Volkswagen, Toys r Us, booking.com), Hybrid Brand Names (combination of what it does and something else, like surveymonkey, airbnb, userpilot, shopify), Conceptual Brand Names (they create a feeling or convey an idea rather that what they do like apple, nike, amazon), Abstract brand names (they dont necessarily mean something but they are nice to say like yahoo, pixar, google)'
         }
         
     ];
