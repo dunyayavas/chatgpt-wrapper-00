@@ -7,7 +7,7 @@ $(document).ready(function() {
             url: '/generate-text',
             method: 'POST',
             contentType: 'application/json', // Set the content type to JSON
-            data: JSON.stringify({ exampleText, topic }), // Stringify your data
+            data: JSON.stringify({ exampleText }), // Stringify your data
             success: function(data) {
                 $('#output').text(data.generatedText);
             },
