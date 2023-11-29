@@ -14,11 +14,11 @@ app.post('/generate-text', async (req, res) => {
       const messages = [
         {
             role: "system",
-            content: "You are a helpful assistant."
+            content: "You are an expert creative brand strategist. You create brands from business ideas. You have outstanding copywriting skills. Your goals is to create a table with these rows: Brand name, Colors, Target audience, features, benefits, emotions related with benefits, Positioning, UVP, Tone of Voice"
         },
         {
             role: "user",
-            content: `Learn the writing style: ${exampleText} Write something about ${topic} in this style.`
+            content: `Take this business idea: ${exampleText} and answer accordingly.`
         }
     ];
     console.log(exampleText);
