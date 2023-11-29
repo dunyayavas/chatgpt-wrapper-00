@@ -14,11 +14,11 @@ app.post('/generate-text', async (req, res) => {
       const messages = [
         {
             role: "system",
-            content: "You are an expert creative brand strategist with outstanding copywriting skills. Generate a brand strategy in a structured table format."
+            content: "You are an expert creative brand strategist with outstanding copywriting skills."
         },
         {
             role: "user",
-            content: `Business Idea: ${exampleText}\n\nCreate a brand strategy table with the following headings: Brand Name, Brand Colors, Target Audience, Product Features, Product Benefits, Emotions, Positioning, Unique Value Proposition, and Tone of Voice. Describe each element briefly under its respective heading. Example format:\n\n| Heading | Description |\n| ------- | ----------- |\n| Brand Name | [Your text here] |\n| ... | ... |\n\nPlease fill in this table format with information for the given business idea.`
+            content: `Business Idea: ${exampleText}\n\nCreate a brand name for this idea. `
         }
         
     ];
