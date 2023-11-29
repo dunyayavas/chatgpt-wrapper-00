@@ -23,7 +23,6 @@ app.post('/generate-text', async (req, res) => {
         
     ];
     console.log(exampleText);
-    console.log(topic);
 
     try {
         const response = await axios.post('https://api.openai.com/v1/chat/completions', {
