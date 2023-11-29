@@ -18,7 +18,7 @@ app.post('/generate-text', async (req, res) => {
         },
         {
             role: "user",
-            content: `Business Idea: ${exampleText}\n\nCreate a brand name for this idea. `
+            content: "Business Idea: ${exampleText}\n\nCreate a brand name for this idea."
         }
         
     ];
