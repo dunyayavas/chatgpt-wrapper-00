@@ -18,7 +18,18 @@ app.post('/generate-text', async (req, res) => {
         },
         {
             role: "user",
-            content: `Take this business idea: ${exampleText} and create and fill a table with these rows: Brand name, Colors, Target audience, features, benefits, emotions related with benefits, Positioning, UVP, Tone of Voice.`
+            content: `Take this business idea: ${exampleText} 
+            GOAL: Create a table with necessary rows and columns to convey your brand approach.
+            RESPONSE FORMAT: Include below rows in your table. I might give additional details about the row in paranthesis.
+            Brand Name
+            Brand Colors
+            Target Audience (Describe their role, demographics, obstacles, wants and needs.)
+            Features of the Product
+            Benefits of the Product
+            Emotions (emotions of target audience related with benefits)
+            Positioning
+            Unique Value Proposition
+            Tone of Voice of their communication (in 3 to 5 pillars)`
         }
     ];
     console.log(exampleText);
