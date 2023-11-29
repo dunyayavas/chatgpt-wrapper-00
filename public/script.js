@@ -1,7 +1,7 @@
 $(document).ready(function() {
     $('#generate').click(function() {
         const exampleText = $('#example-text').val().trim();
-        const topic = $('#topic').val().trim();
+        console.log("Sending exampleText:", exampleText);
 
         $.ajax({
             url: '/generate-text',

@@ -10,6 +10,7 @@ app.use(express.static('public'));
 
 app.post('/generate-text', async (req, res) => {
     const { exampleText } = req.body;
+    console.log("Received exampleText:", exampleText);
       // Constructing the prompt as a conversation
       const messages = [
         {
