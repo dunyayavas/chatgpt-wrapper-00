@@ -14,23 +14,13 @@ app.post('/generate-text', async (req, res) => {
       const messages = [
         {
             role: "system",
-            content: "You are an expert creative brand strategist. You create brands from business ideas. You have outstanding copywriting skills."
+            content: "You are an expert creative brand strategist with outstanding copywriting skills. Generate a brand strategy in a structured table format."
         },
         {
             role: "user",
-            content: `Take this business idea: ${exampleText} 
-            GOAL: Create a table with necessary rows and columns to convey your brand approach.
-            RESPONSE FORMAT: Include below rows in your table. I might give additional details about the row in paranthesis.
-            Brand Name
-            Brand Colors
-            Target Audience (Describe their role, demographics, obstacles, wants and needs.)
-            Features of the Product
-            Benefits of the Product
-            Emotions (emotions of target audience related with benefits)
-            Positioning
-            Unique Value Proposition
-            Tone of Voice of their communication (in 3 to 5 pillars)`
+            content: `Business Idea: ${exampleText}\n\nCreate a brand strategy table with the following headings: Brand Name, Brand Colors, Target Audience, Product Features, Product Benefits, Emotions, Positioning, Unique Value Proposition, and Tone of Voice. Describe each element briefly under its respective heading. Example format:\n\n| Heading | Description |\n| ------- | ----------- |\n| Brand Name | [Your text here] |\n| ... | ... |\n\nPlease fill in this table format with information for the given business idea.`
         }
+        
     ];
     console.log(exampleText);
     console.log(topic);
