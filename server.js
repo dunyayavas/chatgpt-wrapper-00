@@ -13,12 +13,12 @@ app.post('/generate-text', async (req, res) => {
       // Constructing the prompt as a conversation
       const messages = [
         {
-            role: "system",
-            content: "You are an expert creative brand strategist with outstanding copywriting skills."
+            role: 'system',
+            content: 'You are an expert creative brand strategist with outstanding copywriting skills.'
         },
         {
-            role: "user",
-            content: "Business Idea: ${exampleText}\n\nCreate a brand name for this idea."
+            role: 'user',
+            content: 'Business Idea: ${exampleText}\n\nCreate a brand name for this idea.'
         }
         
     ];
